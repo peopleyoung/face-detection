@@ -1,0 +1,4 @@
+thop
+tabulate
+loguru
+PyYAML

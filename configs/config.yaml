@@ -1,0 +1,26 @@
+deepstream_dir: /opt/nvidia/deepstream/deepstream-6.0
+loglevel: INFO
+input_width: 1280
+input_height: 720
+output_width: 1280   
+output_height: 720
+output_format: rtsp
+output_path: ./output
+rtsp_codec: H264
+output_url: stream
+port: 12315
+camera_num: 8
+retinaface_model_path: configs/retinaface_model.engine
+retinaface_backbone: mobilenet
+retinaface_model_inputsize: [3, 640, 640]
+facenet_model_path: configs/facenet_model.engine
+facenet_backbone: mobilenet
+facenet_model_inputsize: [3, 160, 160]
+
+roi_wh: [500, 720]
+roi_start_wh: [450, 0]
+
+confidence: 0.9
+nms_iou: 0.3
+facenet_threhold: 0.9
+
