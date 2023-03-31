@@ -2,26 +2,13 @@
 
 ## 项目相关代码
 
-项目git地址:https://gitlab.zmjkf.cn/industrial-software/ze06-video-analysis/products/research/ds-keypoints-pose.git
-
-
 ## 项目相关环境
-
-项目docker地址：[Harbor (zmjkf.cn)](https://harbor.zmjkf.cn/aivision/deepstream6.0.1:video-splicing-v1.0)
-
-harbor账号:AIvision,密码:Zmj123456#
-
-拉取命令：docker pull harbor.zmjkf.cn/aivision/deepstream6.0.1:video-splicing-v1.0
 
 ## 项目部署流程
 
 ```
 #拷贝代码,并把模型拷进当前根目录
-git clone https://gitlab.zmjkf.cn/industrial-software/ze06-video-analysis/products/research/ds-keypoints-pose.git
-#启动一个容器，并做好配置文件夹映射，对应容器里文件夹为/ds-keypoints-pose/workdir，这里将其映射到本地/home/zzmj/ds-keypoints-pose/
-docker run -it --name ds-keypoints-pose --gpus all --network host -v /home/zzmj/ds-keypoints-pose:/ds-keypoints-pose harbor.zmjkf.cn/aivision/deepstream6.0.1:video-splicing-v1.0 /bin/bash
-#安装其他依赖环境
-cd /ds-keypoints-pose
+
 pip install -r requirements.txt
 #把yolox模型转化成onnx,-b代表batchsize，这里为1
 cd /ds-keypoints-pose/trt
